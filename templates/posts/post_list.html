@@ -4,7 +4,7 @@
     <div class="container">
     <div class="row">
         {% for object in object_list %}
-            <div class="col-4">
+            <div class="col-4" style="display: grid; grid-template-columns: repeat(4, 1fr); @media (max-width: 800px) { grid-template-columns: 1fr;}">
                     <div class="card" style="width: 18rem;">
                         <img src="{{ object.thumbnail.url }}" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -13,11 +13,6 @@
                         </a>
                             <p class="card-text"> {{ object.content|truncatechars:40 }} </p>
                             <hr/>
-                            <p>
-                                <span><i class="fas fa-thumbs-up ml-2"> </i>{{ object.get_like_count }} </span>
-                                <span><i class="fas fa-eye ml-2"> </i>{{ object.get_view_count }}</span>
-                                <span><i class="fas fa-comments ml-2"> </i>{{ object.get_comment_count }}</span>
-                            </p>
                             <p class="cardd-text">
                                 Posted {{ object.publish_date|timesince }} ago
                             </p>
