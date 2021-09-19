@@ -1,5 +1,0 @@
-@media (max-width: 768px) {
-    .news-cards {
-        grid-template-columns: 1fr;
-      }
-}
